@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-3">
+        @if (isvisible) {
+        <div class="p-3 text-center bg-primary">
+            <h4>div1</h4>
+        </div>
+        }
+
+        <div class="row pt-3" style="margin-top: 10px;">
+            <div class="col-4" style="margin-left: 30px;">
+                <button class="btn btn-primary btn-lg" (click)="visible()"> show</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary btn-lg" (click)="hide()"> hide</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-3">
+        @if (isdiv2) {
+        <div class="p-3 text-center bg-primary">
+            <h4>div2</h4>
+        </div>
+        }
+        <div style="margin-top: 10px ;margin-left: 35%;">
+            <button class="btn btn-primary btn-lg" (click)="toggle()"> toggle</button>
+        </div>
+    </div>
+
+
+    <div class="col-3">
+        @if (num1==num2) {
+            <div class="p-3 text-center bg-primary">
+                <h4>div3</h4>
+            </div>
+        }
+               
+                <div style=" display: flex; align-items: center;" >
+                    <input  type="text" [(ngModel)]="num1"   placeholder="num1" class="width-50">
+                    <input type="text" [(ngModel)]="num2"  placeholder="num2" class="width-50">
+                </div>
+        
+
+
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center bg-primary">
+            @if (DropDownValue=="maharstra") {
+                <p>maharstra</p>
+            }@else if (DropDownValue=="goa") {
+                <p>goa</p>
+            }@else if (DropDownValue=="mp") {
+                <p>mp</p>
+            }
+           
+            
+            
+        </div>
+    </div>
+
+
+
+
+
+</div>
+<div class="col d-flex flex-column align-items-end">
+    <label for="simpleDropdown" style="margin-right: 30px;">Choose an option:</label>
+<select id="simpleDropdown" style="margin-right: 30px;" [(ngModel)]="DropDownValue">
+    <option value="choose"> choose</option>
+  <option value="maharstra"> maharstra</option>
+  <option value="goa"> goa</option>
+  <option value="mp"> mp</option>
+</select>
+
+</div>
